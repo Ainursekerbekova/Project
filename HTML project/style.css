@@ -1,0 +1,65 @@
+body{
+	margin: 0;
+}
+.section-1 {
+	width: 100vw;
+	height: 100vh;
+}
+.section-1 .menu{
+	background-color: red;
+	width:100vw;
+	height:8vw;
+	display: flex;
+	flex-direction: row;
+	margin:0;
+	align-items: center;
+}
+.section-1 .menu a{
+	margin: 0 12 0 8vw;
+	text-decoration: none;
+	font-size: 1.75vw;
+	color:#0071CC; 
+}
+.section-1 #logo{
+	margin:0 -5vw 0 -7vw;
+	width: 20vw;
+	height: 15vh;
+}
+#login{
+	margin: 0 0 52 11vw;
+	background-color:red;
+	color:black;
+	font-size: 1.35vw;
+}
+
+.menu a:hover{
+	color: white;
+}
+
+#login:hover{
+	color: white;
+}
+.backgroundMARVEL img {
+	position: absolute;
+	width: 100vw;
+	height: 38vw;
+	margin: 0;
+	position: absolute;
+	z-index: -1;
+}
+.backgroundMARVEL p{
+	position: absolute;
+	margin: 8% 0 0 38%;
+	color:red;
+	font-size: 5.5vw;
+	font-weight: 600;
+}
+.foot{
+		margin: 38vw 0 0 0;
+		position: relative;
+		width: 100vw;
+		height: 2vw;
+		background-color: black;
+		text-align: center;
+		color:white;
+		}
