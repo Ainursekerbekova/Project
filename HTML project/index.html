@@ -1,78 +1,27 @@
 <html>
 <head>
+<meta charset = "UTF-8">
 <title>Marvel</title>
 <link rel="icon" type="image/ico" href="logo.png">
-<style>
-body{
-font:15px/1.5 Arial, Helvetica, sans-serif;
-padding:0;
-margin:0;
-background-color:#f4f4f4;
-}
-
-.container{
-width:80%;
-margin:auto;
-overflow:hidden;
-}
-header{
-display: inline-flex;
-justify-content: center;
-justify-content: space-around;
-margin: 0px;	
-width: 100%;
-min-height:300px;
-background:url("backgr.jpg");
-background-position:center;
-color:#ffffff;
-
-}
-header a{
-	padding-right: 50px;
-	font-size: 20px;
-	font-family: Arial Narrow;
-	color: white;
-	text-decoration: none;
-	}
-#showcase{
-min-height:400px;
-}
-
-#branding a{
-	
-
-}
-
-</style>
+<link rel = "stylesheet" href= "style.css">
+<link rel = "script" href="script.js">
 </head>
 <body>
-<header>
-<div class="container">
-<div id="branding">
-<h1><a href="signin.html">Sign in</a><h1>
-</div>
-<nav>
-<ul>
-<a href="index.html">CHARACTERS</a>
+<div class="section-1">
+<div class="menu">
+<a id="logo1" href="index.html"><img id="logo" src="logo1.png"></a>
+<a href="characters.html">CHARACTERS</a>
 <a href="index.html">GAMES</a>
 <a href="index.html">COMICS</a>
 <a href="index.html">MOVIES</a>
-</ul>
-</nav>
+<button id ="login" onclick= "window.location.href='signin.html'">Sign in</button>
 </div>
-</header>
-<section id="showcase">
-<div class="container">
-<h1>Marvel Universe</h1>
-<p></p>
+<div class="backgroundMARVEL">
+<p>Welcome to our <br>Marvel Universe</p>
+<img src="back.png">
 </div>
-</section>
-<section id="newsletter">
-<div class="container">
-
-</div>
-</section>
 <footer>
-<p>©2018 MARVEL</p>
+<div class="foot">©2018 MARVEL   Zharryssov Galym +7082972470 Baikadamova Gauhar +7752358785</p>
+</footer>
 </body>
 </html>
