@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Marvel</title>
+		<link rel = "stylesheet" href = "styleComics.css">
+		<meta http-equiv="Content-Type">
+		<script>
+			function fun(event){
+				document.getElementsByTagName("img")[0].src=event.currentTarget.src;
+			}
+			const image=document.querySelectorAll("img");
+			for(i=0; i<6; i++){
+				image[i].addEventListener("click",fun);
+			}
+		</script>
+	</head>
+	<body>
+		<div class = "header">
+			<div class = "header_section">
+				<div class = "header_item_headerlogo">
+					Marvel Universe
+				</div>
+				<div class = "header_item_headerButton"><a href = "#">
+				Comics</a></div>
+				<div class = "header_item_headerButton"><a href = "#">
+				Games</a></div>
+			    <div class = "header_item_headerButton"><a href = "#">
+				Movies</a></div>
+			</div>
+			<div class = "header_section">
+			<div class = "header_item_headerButton"><a href = "#">
+				Sign in</a></div>
+			</div>
+		</div>
+		<div class = "flex_parent">
+			<div class = "side_column">
+				<div class = "ind_items">
+					<div class = "item1">
+						 <img src="https://cdn.gamerant.com/wp-content/uploads/maxresdefault-10.jpg.optimal.jpg">
+					</div>
+				</div>
+				<div class = "descript">
+					Cost:30.000$
+				</div>
+				<button class="button">Buy</button>
+			</div>
+			<div class = "side_column">
+				<div class="grid_parent">
+					<div class = "ind_items">
+						<div class = "item2">
+							 <img src="https://cdn.gamerant.com/wp-content/uploads/maxresdefault-10.jpg.optimal.jpg">
+						</div>
+					</div>
+					<div class = "ind_items">
+						<div class = "item2">
+							 <img src="https://imgix.ranker.com/user_node_img/104/2075534/original/spider-man-photo-u76?w=650&q=50&fm=jpg&fit=crop&crop=faces">
+						</div>
+					</div>
+					<div class = "ind_items">
+						<div class = "item2">
+							 <img src="https://cdn.gamerant.com/wp-content/uploads/maxresdefault-10.jpg.optimal.jpg">
+						</div>
+					</div>
+					<div class = "ind_items">
+						<div class = "item2">
+							 <img src="https://cdn.gamerant.com/wp-content/uploads/maxresdefault-10.jpg.optimal.jpg">
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</body>
+</html>
