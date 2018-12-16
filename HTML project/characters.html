@@ -1,18 +1,87 @@
 <html>
-<head>
-<meta charset = "UTF-8">
-<title>Marvel</title>
-<link rel="icon" type="image/ico" href="logo.png">
-<link rel = "stylesheet" href= "styleCharact.css">
-<link rel = "script" href="script.js">
-</head>
-<body>
-<div class="section-1">
-<div class="menu">
-<a id="logo1" href="index.html"><img id="logo" src="logo1.png"></a>
-<a href="index.html">CHARACTERS</a>
-<a href="index.html">GAMES</a>
-<a href="index.html">COMICS</a>
-<a href="index.html">MOVIES</a>
-<button id ="login" onclick= "window.location.href='signin.html'">Sign in</button>
-</div>
+	<head>
+		<meta charset = "UTF-8">
+		<title>Marvel</title>
+		<link rel="icon" type="image/ico" href="logo.png">
+		<link rel = "stylesheet" href = "styleCharc.css">
+		<style>
+		body{
+	background-image:url("https://avatanplus.com/files/resources/mid/595fe14717ce815d1e87fdba.jpg");
+	}
+a{	
+	color: red;
+	text-decoration: none;
+}
+
+.header{
+	display:flex;
+	justify-content: space-between;
+	padding:20px;
+	background: black;
+	color: white;
+	font-family: Georgia;
+}
+.header_section{
+	display:flex;
+	align-items: center;
+}
+.headerButton{
+	padding:10px 60px;
+	font-size: 20px;
+	margin-left: 5px;
+	font-style: italic;
+}
+.SignInButton{
+	font-weight:bold;
+	padding-bottom:55px;
+	font-style:italic;
+}
+
+.headerlogo{
+	font-size:40px;
+	color:red;
+	border: 2px solid red;
+}
+
+footer{
+  text-align: center;
+  background-color: black;
+  color:red;
+  font-style:italic;
+  font-weight:bold;
+  font-size:15px;
+  position:absolute;
+  bottom:-500px;
+  width:1340px;
+}
+		</style>
+	</head>
+	<body>
+		<div class = "header">
+			<div class = "header_section">
+				<div class = "headerlogo"><a href="index.html">Marvel Universe</a></div>
+				<div class = "headerButton"><a href = "characters.html">
+				Characters</a></div>
+				<div class = "headerButton"><a href = "comics.html">
+				Comics</a></div>
+				<div class = "headerButton"><a href = "#">
+				Games</a></div>
+			    <div class = "headerButton"><a href = "#">
+				Movies</a></div>
+			</div>
+			<div class = "header_section">
+			<div class = "SignInButton"><a href = "#">
+				Sign in</a></div>
+			</div>
+			</div>
+		</div>
+
+
+<footer>
+<p>©2018 MARVEL   Zharryssov Galym +7082972470 Baikadamova Gauhar +7752358785</p>
+</footer>
+</body>
+</html> 
+
+
+	
