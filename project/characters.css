@@ -1,0 +1,82 @@
+.header{
+    display:flex;
+    justify-content: space-between;
+    padding:20px;
+    background: black;
+    color: white;
+    font-family: Georgia;
+}
+.header_section{
+    display:flex;
+    align-items: center;
+}
+.headerButton{
+    padding:10px 60px;
+    font-size: 20px;
+    margin-left: 5px;
+    font-style: italic;
+}
+.SignInButton{
+    font-weight:bold;
+    padding-bottom:55px;
+    font-style:italic;
+}
+.headerlogo{
+    font-size:40px;
+    color:red;
+    border: 2px solid red;
+}
+a{
+    color: red;
+    text-decoration: none;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Georgia, serif;
+    font-size:15pt;
+	background-image:url("https://avatanplus.com/files/resources/mid/595fe14717ce815d1e87fdba.jpg");
+   
+}
+#container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.character{
+    background-color: rgba(255,255,255,0.66);
+    width: 100%;
+    border: 5px solid grey;
+    margin-top: 30px;
+}
+img{
+    margin: 6px;
+    display: inline-block;
+    width: 200px;
+}
+.eventText{
+    width: 80%;
+    display: inline-block;
+}
+span{
+    font-weight: bold;
+    font-size: 1.5em;
+	font-style:italic;
+	color:	#191970;
+}
+#container a{
+    color: black;
+	
+}
+footer{
+  text-align: center;
+  background-color: black;
+  color:red;
+  font-style:italic;
+  font-weight:bold;
+  font-size:15px;
+  position:absolute;
+  bottom:-500px;
+  width:100%;
+}
