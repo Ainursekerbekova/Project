@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size:14pt;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image:url("https://avatanplus.com/files/resources/mid/595fe14717ce815d1e87fdba.jpg");
+}
+a{
+    color: red;
+    text-decoration: none;
+}
+.header_section{
+    display:flex;
+    justify-content: space-between;
+    padding:20px;
+    background: black;
+    color: white;
+    align-items: center;
+}
+.headerButton{
+    padding:10px 60px;
+    font-size: 20px;
+    margin-left: 5px;
+    font-style: italic;
+}
+.headerlogo{
+    font-size:40px;
+    color: red;
+    border: 2px solid red;
+    font-family: Impact,serif;
+    padding: 0 10px 0 10px;
+}
+#container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.character{
+    background-color: rgba(255,255,255,0.66);
+    width: 100%;
+    border: 5px solid grey;
+    margin-top: 30px;
+}
+img{
+    margin: 6px;
+    display: inline-block;
+    width: 200px;
+}
+.eventText{
+    width: 80%;
+    display: inline-block;
+}
+span{
+    font-weight: bold;
+    font-size: 1.3em;
+	font-style:italic;
+	color:	#191970;
+}
+#container a{
+    color: black;
+	
+}
+footer{
+    text-align: center;
+    background-color: black;
+    color:red;
+    font-style:italic;
+    font-weight:bold;
+    font-size:14pt;
+    position:absolute;
+    margin-bottom: 0;
+    width:100%;
+}

@@ -1,0 +1,97 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image:url("https://avatanplus.com/files/resources/mid/595fe14717ce815d1e87fdba.jpg");
+}
+a{
+    color: red;
+    text-decoration: none;
+}
+.header_section{
+    display:flex;
+    justify-content: space-between;
+    padding:20px;
+    background: black;
+    color: white;
+    align-items: center;
+}
+.headerButton{
+    padding:10px 60px;
+    font-size: 20px;
+    margin-left: 5px;
+    font-style: italic;
+}
+.headerlogo{
+    font-size:40px;
+    color: red;
+    border: 2px solid red;
+    font-family: Impact,serif;
+    padding: 0 10px 0 10px;
+}
+.flex-main{
+    display:flex;
+}
+.flex-article{
+    padding-top:10px;
+    flex:20 100;
+}
+.slideshow-container {
+    max-width: 1200px;
+    position: relative;
+    margin: auto;
+}
+.text {
+    color: red;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+}
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 0px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+
+}
+.active {
+    background-color: red;
+}
+.content{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: 140px;
+    width: 80%;
+    background-color: black;
+    border:2px solid red;
+    border-radius: 15px;
+}
+h1{
+    color:red;
+    text-align: center;
+}
+.contenttext{
+    color:red;
+    text-align:center;
+    font-size:20px;
+}
+.fortext{
+    width: 90%;
+    margin-left: 65px;
+}
+footer{
+    text-align: center;
+    background-color: black;
+    color:red;
+    font-style:italic;
+    font-weight:bold;
+    font-size:15px;
+    position: absolute;
+    margin-bottom: 0;
+    width:100%;
+}
