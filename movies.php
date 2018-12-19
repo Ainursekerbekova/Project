@@ -12,16 +12,17 @@ $name=filter_input(INPUT_POST,'name');
 $date=filter_input(INPUT_POST,'date');
 $img=filter_input(INPUT_POST,'img');
 $about=filter_input(INPUT_POST,'about');
-$phase=filter_input(INPUT_POST,'phaze');
+$phase=filter_input(INPUT_POST,'phase');
+
 
 if(isset($name)){
-    $query="INSERT INTO `characters` (`id`,`faze`,`name`, `img`, `first mention`, `page`, `about`) VALUES (' $name ','$img','$date','$about')";
+    $query="SELECT * FROM `movies`";
+    $results = mysqli_query($conn, $query);
+    $id=mysqli_num_rows($results)+1;
+    $query="INSERT INTO `movies` (`id`,`faze`,`name`, `img`, `date`, `about`) VALUES ('$id','$phase','$name','$img','$date','$about')";
     $results = mysqli_query($conn, $query);
 }
-
 ?>
-
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,16 +31,20 @@ if(isset($name)){
     <script src="movies.js" defer></script>
 </head>
 <body>
-
-<div class = "header">
-    <div class = "header_section">
-        <div class = "headerlogo"><a href="index.html">Marvel Universe</a></div>
-        <div class = "headerButton"><a href = "characters.php">Characters</a></div>
-        <div class = "headerButton"><a href = "comics.php">Comics</a></div>
-        <div class = "headerButton"><a href = "#">Games</a></div>
-        <div class = "headerButton"><a href = "movies.php">Movies</a></div>
-        <div class = "headerButton"><a href = "signin.php">Sign in</a></div>
-    </div>
+<div class = "header_section">
+    <div class = "headerlogo"><a href="index.php">Marvel Universe</a></div>
+    <div class = "headerButton"><a href = "characters.php">Characters</a></div>
+    <div class = "headerButton"><a href = "comics.php">Comics</a></div>
+    <div class = "headerButton"><a href = "games.php">Games</a></div>
+    <div class = "headerButton"><a href = "movies.php">Movies</a></div>
+    <?php
+    if(isset($_COOKIE['user']) || isset($_COOKIE['admin'])){
+        echo "<div class = \"headerButton\"><a href = \"out.php\">Sign out</a></div>";
+    }
+    else{
+        echo "<div class = \"headerButton\"><a href = \"signin.php\">Sign in</a></div>";
+    }
+    ?>
 </div>
 <section>
     <div class="title">
@@ -92,17 +97,20 @@ if(isset($name)){
     $q=0;
     echo "<div id='forQ'></div>";
     mysqli_close($conn);
-    if (isset($_COOKIE["admin"])){
-        echo "<div class= \"title addmovie\" onclick='add()'>Add movie";
-        echo "<form action='movies.php'>";
-        echo "</form>";
-        echo "</div>";
-    }
     ?>
 
 </section>
+<?php
+$l="m";
+if (isset($_COOKIE["admin"])){
+    echo "<div class='title' id='addmovie' onclick='add($l)'>Add movie</div>";
+}
+?>
+
 <footer>
-    <p>©2018 MARVEL  Zharryssov Galym   Baikadamova Gauhar   Sekerbekova Ainur</p>
+    <p>©2018 MARVEL </p>
+    Team project for web course
+    <p>Zharryssov Galym,  Baikadamova Gauhar, Sekerbekova Ainur</p>
 </footer>
 </body>
 </html>
