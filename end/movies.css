@@ -1,44 +1,6 @@
-body{
-    margin: 0;
-    min-height:100%;
-    position:relative;
-    padding-bottom: 200px;
-    font-size:14pt;
-    font-family: Arial, Helvetica, sans-serif;
-    background: url(https://avatanplus.com/files/resources/mid/595fe14717ce815d1e87fdba.jpg) ;
-}
-
-/*     for header    */
-a{
-    color: red;
-    text-decoration: none;
-}
-.header_section{
-    display:flex;
-    justify-content: space-between;
-    padding:20px;
-    background: black;
-    color: white;
-    align-items: center;
-}
-.headerButton{
-    padding:10px 60px;
-    font-size: 20px;
-    margin-left: 5px;
-    font-style: italic;
-}
-.headerlogo{
-    font-size:40px;
-    color: red;
-    border: 2px solid red;
-    font-family: Impact,serif;
-    padding: 0 10px 0 10px;
-}
-
-
 /*     elements     */
 section{
-    max-height: 100%;
+    max-height: 150%;
     overflow: auto;
     width: 75%;
     margin-left: auto;
@@ -121,18 +83,4 @@ input[type=submit]{
     background-color: black;
     cursor: pointer;
     display: inline-block;
-}
-
-
-footer{
-    text-align: center;
-    background-color: black;
-    color:red;
-    font-style:italic;
-    font-weight:bold;
-    font-size:14pt;
-    width:100%;
-    position: absolute;
-    bottom: 0;
-    height: 150px;
 }

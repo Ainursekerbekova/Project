@@ -19,16 +19,14 @@ if (isset($namedel)){
     echo $namedel." is name";
     $query="DELETE FROM `characters` WHERE `name` = '$namedel'";
     $results = mysqli_query($conn, $query);
-    if (mysqli_query($conn, $query2)) {
-        echo "New record created successfully";}
+    if (mysqli_query($conn, $query2)) {}
     else {echo "there is error: ".mysqli_error($results);}
 }
 
 if(isset($name)){
     $query="INSERT INTO `characters` (`name`, `img`, `first mention`, `page`, `about`) VALUES ('$name', '$img', '$date', '$page', '$about')";
     $results = mysqli_query($conn, $query);
-    if (mysqli_query($conn, $query2)) {
-        echo "New record created successfully";}
+    if (mysqli_query($conn, $query2)) {}
     else {echo "there is error: ".mysqli_error($conn);}
 }
 ?>
@@ -37,7 +35,8 @@ if(isset($name)){
     <title>Characters</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="characters.css">
-    <script src="movies.js" defer></script>
+    <link rel="stylesheet" href="acommon.css">
+    <script src="acommon.js" defer></script>
 </head>
 <body>
 
@@ -49,10 +48,10 @@ if(isset($name)){
     <div class = "headerButton"><a href = "movies.php">Movies</a></div>
     <?php
     if(isset($_COOKIE['user']) || isset($_COOKIE['admin'])){
-        echo "<div class = \"headerButton\" '><a href = \"out.php\">Sign out</a></div>";
+        echo "<div class = \"headerButton\" onclick='out()'><a href='characters.php'>Sign out</a></div>";
     }
     else{
-        echo "<div class = \"headerButton\"><a href = \"signin.php\">Sign in</a></div>";
+        echo "<div class = \"headerButton\"><a href = 'signin.php'>Sign in</a></div>";
     }
     ?>
 </div>
@@ -92,12 +91,6 @@ if (isset($_COOKIE["admin"])){
     Team project for web course
     <p>Zharryssov Galym,  Baikadamova Gauhar, Sekerbekova Ainur</p>
 </footer>
-
-
-
-
-
-
 
 </body>
 </html>

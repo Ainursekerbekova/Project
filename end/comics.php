@@ -39,6 +39,8 @@ mysqli_close($db_conn);
     <title>Marvel</title>
     <meta http-equiv="Content-Type">
     <link rel="stylesheet" href="comics.css">
+    <script src="acommon.js" defer></script>
+    <link rel="stylesheet" href="acommon.css">
 </head>
 <body>
 <div class = "header_section">
@@ -49,7 +51,7 @@ mysqli_close($db_conn);
     <div class = "headerButton"><a href = "movies.php">Movies</a></div>
     <?php
     if(isset($_COOKIE['user']) || isset($_COOKIE['admin'])){
-        echo "<div class = \"headerButton\" '><a href = \"out.php\">Sign out</a></div>";
+        echo "<div class = \"headerButton\" onclick='out()'><a href='comics.php'>Sign out</a></div>";
     }
     else{
         echo "<div class = \"headerButton\"><a href = \"signin.php\">Sign in</a></div>";

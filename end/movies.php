@@ -28,7 +28,8 @@ if(isset($name)){
     <meta charset="UTF-8">
     <title>Movies</title>
     <link rel="stylesheet" href="movies.css">
-    <script src="movies.js" defer></script>
+    <link rel="stylesheet" href="acommon.css">
+    <script src="acommon.js" defer></script>
 </head>
 <body>
 <div class = "header_section">
@@ -39,7 +40,7 @@ if(isset($name)){
     <div class = "headerButton"><a href = "movies.php">Movies</a></div>
     <?php
     if(isset($_COOKIE['user']) || isset($_COOKIE['admin'])){
-        echo "<div class = \"headerButton\"><a href = \"out.php\">Sign out</a></div>";
+        echo "<div class = \"headerButton\" onclick='out()'><a href='movies.php'>Sign out</a></div>";
     }
     else{
         echo "<div class = \"headerButton\"><a href = \"signin.php\">Sign in</a></div>";
@@ -72,6 +73,15 @@ if(isset($name)){
     while ($row = mysqli_fetch_array($results)) {
         echo '<div class="faze">';
         echo '<div class="movie">';
+
+        if (isset($_COOKIE["admin"])){
+        ?>
+        <form action='movies.php' method="post" class="del">
+        <input type="submit"  class="del" value="Delete">
+        <?php
+        echo "<input type='hidden' name='namedel' value='".$row['id']."'></form>";
+        }
+
         echo '<img src="'.$row['img'].'" align="top">';
         echo '<div class="eventText">';
         echo "<span>".$row['name']."</span><br><b>";

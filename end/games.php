@@ -3,6 +3,8 @@
     <title>Marvel</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="games.css">
+    <script src="acommon.js" defer></script>
+    <link rel="stylesheet" href="acommon.css">
 </head>
 <body>
 <div class = "header_section">
@@ -13,7 +15,7 @@
     <div class = "headerButton"><a href = "movies.php">Movies</a></div>
     <?php
     if(isset($_COOKIE['user']) || isset($_COOKIE['admin'])){
-        echo "<div class = \"headerButton\" '><a href = \"out.php\">Sign out</a></div>";
+        echo "<div class = \"headerButton\" onclick='out()'><a href='games.php'>Sign out</a></div>";
     }
     else{
         echo "<div class = \"headerButton\"><a href = \"signin.php\">Sign in</a></div>";
