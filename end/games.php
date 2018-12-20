@@ -46,10 +46,12 @@ while ($row = mysqli_fetch_array($results)) {
 mysqli_close($conn);
 ?>
 </div>
-        <footer>
-            <p>©2018 MARVEL </p>
-            Team project for web course
-            <p>Zharryssov Galym,  Baikadamova Gauhar, Sekerbekova Ainur</p>
-        </footer>
+
+
+<footer>
+    <p>©2018 MARVEL </p>
+    Team project for web course
+    <p>Zharryssov Galym,  Baikadamova Gauhar, Sekerbekova Ainur</p>
+</footer>
 </body>
 </html>

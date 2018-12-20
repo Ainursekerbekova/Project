@@ -64,7 +64,7 @@ function add(l) {
             let page = document.createElement("textarea");
             page.rows="2";
             page.cols="30";
-            page.name = "img";
+            page.name = "page";
             page.required = true;
 
             name.placeholder = "Character's name";

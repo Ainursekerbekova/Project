@@ -9,27 +9,29 @@ if ($conn_error != null){
     echo "There is some connection error:<p>  $conn_error </p>";
 }
 $name=filter_input(INPUT_POST,'name');
-$date=filter_input(INPUT_POST,'date');
 $img=filter_input(INPUT_POST,'img');
+$date=filter_input(INPUT_POST,'date');
+$page=filter_input(INPUT_POST,'page');
 $about=filter_input(INPUT_POST,'about');
-$phase=filter_input(INPUT_POST,'phase');
+$namedel=filter_input(INPUT_POST,'namedel');
 
+if (isset($namedel)){
+    echo $namedel." is name";
+    $query="DELETE FROM `characters` WHERE `name` = '$namedel'";
+    $results = mysqli_query($conn, $query);
+    if (mysqli_query($conn, $query2)) {
+        echo "New record created successfully";}
+    else {echo "there is error: ".mysqli_error($results);}
+}
 
 if(isset($name)){
-    $query="SELECT * FROM `characters`";
+    $query="INSERT INTO `characters` (`name`, `img`, `first mention`, `page`, `about`) VALUES ('$name', '$img', '$date', '$page', '$about')";
     $results = mysqli_query($conn, $query);
-    $id=mysqli_num_rows($results)+1;
-    $query="INSERT INTO `characters` (`id`,`faze`,`name`, `img`, `date`, `about`) VALUES ('$id','$phase','$name','$img','$date','$about')";
-    $results = mysqli_query($conn, $query);
+    if (mysqli_query($conn, $query2)) {
+        echo "New record created successfully";}
+    else {echo "there is error: ".mysqli_error($conn);}
 }
 ?>
-
-
-
-
-
-
-
 <html>
 <head>
     <title>Characters</title>
@@ -38,10 +40,6 @@ if(isset($name)){
     <script src="movies.js" defer></script>
 </head>
 <body>
-
-
-
-
 
 <div class = "header_section">
     <div class = "headerlogo"><a href="index.php">Marvel Universe</a></div>
@@ -58,9 +56,7 @@ if(isset($name)){
     }
     ?>
 </div>
-
-
-
+<section>
 <div id="container">
 <?php
 $query="SELECT * FROM `characters`";
@@ -68,6 +64,13 @@ $results = mysqli_query($conn, $query);
 while ($row = mysqli_fetch_array($results)) {
     echo '<a href="'.$row['page'].'">';
     echo "<div class=\"character\">";
+    if (isset($_COOKIE["admin"])){
+        ?>
+        <form action='characters.php' method="post" class="del">
+            <input type="submit"  class="del" value="Delete">
+        <?php
+        echo "<input type='hidden' name='namedel' value='".$row['name']."'></form>";
+    }
     echo '<img src="'.$row['img'].'"  align="top" >';
     echo '<div class="eventText"><span >'.$row['name'].'</span><br><br>';
     echo "<b>".$row['first mention']."</b><br>".$row['about'];
@@ -77,25 +80,18 @@ mysqli_close($conn);
 ?>
 </div>
 
-
-
-
 <?php
 $l="c";
 if (isset($_COOKIE["admin"])){
     echo "<div class='title' id='addmovie' onclick='add($l)'>Add Character</div>";
 }
 ?>
-
-
-
-
+</section>
 <footer>
     <p>©2018 MARVEL </p>
     Team project for web course
     <p>Zharryssov Galym,  Baikadamova Gauhar, Sekerbekova Ainur</p>
 </footer>
-
 
 
 
