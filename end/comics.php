@@ -39,8 +39,8 @@ mysqli_close($db_conn);
     <title>Marvel</title>
     <meta http-equiv="Content-Type">
     <link rel="stylesheet" href="comics.css">
-    <script src="acommon.js" defer></script>
-    <link rel="stylesheet" href="acommon.css">
+    <script src="common.js" defer></script>
+    <link rel="stylesheet" href="common.css">
 </head>
 <body>
 <div class = "header_section">

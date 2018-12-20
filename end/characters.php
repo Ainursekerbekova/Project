@@ -16,7 +16,6 @@ $about=filter_input(INPUT_POST,'about');
 $namedel=filter_input(INPUT_POST,'namedel');
 
 if (isset($namedel)){
-    echo $namedel." is name";
     $query="DELETE FROM `characters` WHERE `name` = '$namedel'";
     $results = mysqli_query($conn, $query);
     if (mysqli_query($conn, $query2)) {}
@@ -35,8 +34,8 @@ if(isset($name)){
     <title>Characters</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="characters.css">
-    <link rel="stylesheet" href="acommon.css">
-    <script src="acommon.js" defer></script>
+    <link rel="stylesheet" href="common.css">
+    <script src="common.js" defer></script>
 </head>
 <body>
 

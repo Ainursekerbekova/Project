@@ -13,7 +13,12 @@ $date=filter_input(INPUT_POST,'date');
 $img=filter_input(INPUT_POST,'img');
 $about=filter_input(INPUT_POST,'about');
 $phase=filter_input(INPUT_POST,'phase');
+$namedel=filter_input(INPUT_POST,'namedel');
 
+if (isset($namedel)){
+    $query="DELETE FROM `movies` WHERE `id` = '$namedel'";
+    $results = mysqli_query($conn, $query);
+}
 
 if(isset($name)){
     $query="SELECT * FROM `movies`";
@@ -28,8 +33,8 @@ if(isset($name)){
     <meta charset="UTF-8">
     <title>Movies</title>
     <link rel="stylesheet" href="movies.css">
-    <link rel="stylesheet" href="acommon.css">
-    <script src="acommon.js" defer></script>
+    <link rel="stylesheet" href="common.css">
+    <script src="common.js" defer></script>
 </head>
 <body>
 <div class = "header_section">
@@ -57,6 +62,13 @@ if(isset($name)){
     while ($row = mysqli_fetch_array($results)) {
         echo '<div class="faze">';
         echo '<div class="movie">';
+    if (isset($_COOKIE["admin"])){
+    ?>
+    <form action='movies.php' method="post" class="del">
+        <input type="submit"  class="del" value="Delete">
+        <?php
+        echo "<input type='hidden' name='namedel' value='".$row['id']."'></form>";
+        }
         echo '<img src="'.$row['img'].'" align="top">';
         echo '<div class="eventText">';
         echo "<span>".$row['name']."</span><br><b>";
@@ -73,7 +85,6 @@ if(isset($name)){
     while ($row = mysqli_fetch_array($results)) {
         echo '<div class="faze">';
         echo '<div class="movie">';
-
         if (isset($_COOKIE["admin"])){
         ?>
         <form action='movies.php' method="post" class="del">
@@ -81,7 +92,6 @@ if(isset($name)){
         <?php
         echo "<input type='hidden' name='namedel' value='".$row['id']."'></form>";
         }
-
         echo '<img src="'.$row['img'].'" align="top">';
         echo '<div class="eventText">';
         echo "<span>".$row['name']."</span><br><b>";
@@ -98,6 +108,13 @@ if(isset($name)){
     while ($row = mysqli_fetch_array($results)) {
         echo '<div class="faze">';
         echo '<div class="movie">';
+        if (isset($_COOKIE["admin"])){
+        ?>
+            <form action='movies.php' method="post" class="del">
+                <input type="submit"  class="del" value="Delete">
+                <?php
+                echo "<input type='hidden' name='namedel' value='".$row['id']."'></form>";
+        }
         echo '<img src="'.$row['img'].'" align="top">';
         echo '<div class="eventText">';
         echo "<span>".$row['name']."</span><br><b>";

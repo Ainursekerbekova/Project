@@ -3,8 +3,9 @@
 	<meta charset = "UTF-8">
 	<title>Marvel</title>
 	<link rel = "stylesheet" href = "index.css">
-    <link rel="stylesheet" href="acommon.css">
-	<script src="acommon.js" defer></script>
+    <link rel="stylesheet" href="common.css">
+	<script src="index.js" defer></script>
+    <script src="common.js" defer></script>
 </head>
 <body>
 <div class = "header_section">

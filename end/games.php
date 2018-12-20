@@ -3,8 +3,8 @@
     <title>Marvel</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="games.css">
-    <script src="acommon.js" defer></script>
-    <link rel="stylesheet" href="acommon.css">
+    <script src="common.js" defer></script>
+    <link rel="stylesheet" href="common.css">
 </head>
 <body>
 <div class = "header_section">
