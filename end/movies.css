@@ -1,42 +1,6 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-size:14pt;
-    font-family: Arial, Helvetica, sans-serif;
-    background: url(https://avatanplus.com/files/resources/mid/595fe14717ce815d1e87fdba.jpg) ;
-}
-
-/*     for header    */
-a{
-    color: red;
-    text-decoration: none;
-}
-.header_section{
-    display:flex;
-    justify-content: space-between;
-    padding:20px;
-    background: black;
-    color: white;
-    align-items: center;
-}
-.headerButton{
-    padding:10px 60px;
-    font-size: 20px;
-    margin-left: 5px;
-    font-style: italic;
-}
-.headerlogo{
-    font-size:40px;
-    color: red;
-    border: 2px solid red;
-    font-family: Impact,serif;
-    padding: 0 10px 0 10px;
-}
-
-
 /*     elements     */
 section{
-    max-height: 100%;
+    max-height: 150%;
     overflow: auto;
     width: 75%;
     margin-left: auto;
@@ -63,6 +27,7 @@ img{
     width: 90%;
     border: 5px solid grey;
     margin-top: 15px;
+    position: relative;
 }
 .eventText{
     width: 74%;
@@ -109,6 +74,10 @@ form{
     border-radius: 50px;
     padding: 10px;
 }
+form.del{
+    padding: 2px;
+    margin: 0;
+}
 input[type=submit]{
     font-size:40px;
     color: red;
@@ -120,19 +89,11 @@ input[type=submit]{
     cursor: pointer;
     display: inline-block;
 }
-
-
-
-
-footer{
-    background-color: black;
-    color:red;
-    text-align: center;
-    font-style:italic;
-    font-weight:bold;
-    font-size:14pt;
-    position:absolute;
-    margin-bottom: 0;
-    margin-top: 10px;
-    width:100%;
- }
+input[type=submit].del{
+    font-size: 20px;
+    right: 0;
+    top: 0;
+    position: absolute;
+    border-radius: 10px;
+    padding: 3px;
+}
