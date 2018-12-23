@@ -1,0 +1,100 @@
+/*     elements     */
+section{
+    max-height: 150%;
+    overflow: auto;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    text-align: center;
+    background-color: red;
+    border-radius: 50px;
+    opacity: 0.9;
+    color: white;
+    font-family: Impact;
+    letter-spacing: 1em;
+}
+img{
+    margin: 6px;
+    display: inline-block;
+    width: 100px;
+}
+.movie{
+    background-color: rgba(255,255,255,0.8);
+    width: 90%;
+    border: 5px solid grey;
+    margin-top: 15px;
+    position: relative;
+}
+.eventText{
+    width: 74%;
+    display: inline-block;
+}
+span{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.faze{
+    display: flex;
+    justify-content: center;
+}
+
+
+/*     for admin part     */
+select{
+    background-color: red;
+    font-weight: bold;
+    font-size: 14pt;
+    width: 50px;
+    padding: 15px;
+    display: inline-block;
+}
+input[type=text], textarea{
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+    background: #f1f1f1;
+}
+#addmovie{
+    cursor: pointer;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.addmovie{
+    background-color: black;
+    border: 10px solid silver;
+}
+form{
+    max-height: 500px;
+    overflow: auto;
+    border-radius: 50px;
+    padding: 10px;
+}
+form.del{
+    padding: 2px;
+    margin: 0;
+}
+input[type=submit]{
+    font-size:40px;
+    color: red;
+    border: 2px solid red;
+    font-family: Impact,serif;
+    padding:0 20px 0 20px;
+    border-radius: 5px;
+    background-color: black;
+    cursor: pointer;
+    display: inline-block;
+}
+input[type=submit].del{
+    font-size: 20px;
+    right: 0;
+    top: 0;
+    position: absolute;
+    border-radius: 10px;
+    padding: 3px;
+}

@@ -1,0 +1,188 @@
+@media screen and (max-width: 1000px) {
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: url(http://shops1.vigbo.com/shops/8061/products/7865717/images/3-5e2d43dc8461e5403fdf78c5aa0e5cef.jpg);
+    }
+    a{
+        color: red;
+        text-decoration: none;
+    }
+    .header_section{
+        display:flex;
+        width: 100%;
+        justify-content: space-between;
+        padding:20px;
+        background: black;
+        color: white;
+        align-items: center;
+    }
+    .headerButton{
+        padding:10px 60px;
+        font-size: 20px;
+        margin-left: 5px;
+        font-style: italic;
+        cursor: pointer;
+    }
+    .headerlogo{
+        font-size:30px;
+        color: red;
+        border: 2px solid red;
+        font-family: Impact,serif;
+        padding: 0 10px 0 10px;
+    }
+    .container {
+        background-color: black;
+        width: 100%;
+        color:yellow;
+        font-size: 2em;
+        position: relative;
+        padding: 5px;
+    }
+    #cvc{
+        width: 40%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        background: #f1f1f1;
+    }
+
+    input[type=text], input[type=password],input[type=number] {
+        width: 100%;
+        padding: 35px;
+        font-size: 2em;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        background: #f1f1f1;
+    }
+    hr {
+        border: 3px solid yellow;
+        margin-bottom: 25px;
+    }
+    #signin {
+        background-color: red;
+        color: white;
+        padding: 16px 20px;
+        font-size: 2em;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+    .error{
+        background-color:red;
+        border:5px solid black;
+        font-weight:bold;
+        padding:10px;
+        width:30%;
+        margin:5px;
+    }
+    #errors{
+        display: flex;
+        justify-content: center;
+    }
+
+}
+@media screen and (min-width: 1000px) {
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: url("https://i.playground.ru/i/blog/306530/content/lg2vgj78.jpg");
+    }
+
+    a {
+        color: red;
+        text-decoration: none;
+    }
+
+    .header_section {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background: black;
+        color: white;
+        align-items: center;
+    }
+
+    .headerButton {
+        padding: 10px 60px;
+        font-size: 20px;
+        margin-left: 5px;
+        font-style: italic;
+        cursor: pointer;
+    }
+
+    .headerlogo {
+        font-size: 40px;
+        color: red;
+        border: 2px solid red;
+        font-family: Impact, serif;
+        padding: 0 10px 0 10px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .container {
+        border-radius: 5%;
+        background-color: black;
+        opacity: 0.9;
+        color: yellow;
+        top: 10px;
+        position: relative;
+        left: 30%;
+        width: 40%;
+        padding: 5px;
+    }
+
+    #cvc {
+        width: 40%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        background: #f1f1f1;
+    }
+
+    input[type=text], input[type=password], input[type=number] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        background: #f1f1f1;
+    }
+
+    hr {
+        border: 1px solid yellow;
+        margin-bottom: 25px;
+    }
+
+    #signin {
+        background-color: red;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        margin-bottom: 0;
+    }
+
+    .error {
+        background-color: red;
+        border: 5px solid black;
+        font-weight: bold;
+        padding: 10px;
+        width: 30%;
+        margin: 5px;
+    }
+
+    #errors {
+        display: flex;
+        justify-content: center;
+    }
+}
