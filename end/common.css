@@ -2,13 +2,11 @@ body{
     margin: 0;
     min-height:100%;
     position:relative;
-    padding-bottom: 200px;
+    padding-bottom: 150px;
     font-size:14pt;
     font-family: Arial, Helvetica, sans-serif;
     background: url(https://avatanplus.com/files/resources/mid/595fe14717ce815d1e87fdba.jpg) ;
 }
-
-
 /*     for header     */
 a{
     color: red;
@@ -19,7 +17,6 @@ a{
     justify-content: space-between;
     padding:20px;
     background: black;
-    color: white;
     align-items: center;
 }
 .headerButton{
@@ -36,7 +33,6 @@ a{
     font-family: Impact,serif;
     padding: 0 10px 0 10px;
 }
-
 
 
 footer{

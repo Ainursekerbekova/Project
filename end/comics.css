@@ -1,6 +1,9 @@
 .flex_parent{
     display: flex;
-    padding-top:10px;
+}
+.buypart{
+    background-color: rgba(0,128,0,0.73);
+    border-radius: 20px;
 }
 .side_column{
     display:flex;
@@ -9,6 +12,8 @@
     flex-basis: 50%;
 }
 .grid_parent{
+    overflow: auto;
+    max-height: 150%;
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -19,9 +24,6 @@
     flex-wrap: wrap;
     padding: 10px;
     justify-content: center;
-}
-#cost{
-    font-size:50px;
 }
 .item1 img{
     display:flex;
@@ -43,7 +45,13 @@
     max-height:280px;
     max-width:280px;
 }
+.item2 img:hover{
+    cursor: pointer;
+    max-height:300px;
+    max-width:300px;
+}
 #button {
+    width: 100%;
     margin-top: 5px;
     display: inline-block;
     padding: 15px 25px;
@@ -67,14 +75,21 @@
     background-color: red;
     text-align: center;
 }
-.item2 img:hover{
-    cursor: pointer;
-    max-height:300px;
-    max-width:300px;
-}
 #button:hover {background-color: #3e8e41}
 #button:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+}
+form[method=get]{
+    color:white;
+    font-size: 20px;
+    font-weight:bold;
+}
+input[type=text] {
+    width: 30%;
+    padding: 15px;
+    margin: 15px ;
+    display: inline-block;
+    background: #f1f1f1;
 }

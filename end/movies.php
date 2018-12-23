@@ -139,5 +139,6 @@ if (isset($_COOKIE["admin"])){
     Team project for web course
     <p>Zharryssov Galym,  Baikadamova Gauhar, Sekerbekova Ainur</p>
 </footer>
+
 </body>
 </html>

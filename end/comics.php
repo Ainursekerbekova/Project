@@ -1,36 +1,26 @@
 <?php
+if(isset($_COOKIE['admin'])){
+    header("Location: comicsAdmin.php");
+    die();
+}
 $host = 'localhost';
-$username ='root';
+$user='root';
 $password = 'root';
 $db = 'project';
-$db_conn=mysqli_connect($host,$username,$password,$db);
-$connection_error=mysqli_connect_error();
+$conn = mysqli_connect($host,$user,$password,$db);
+$conn_error = mysqli_connect_error();
+
 if($connection_error != null){
     echo "<p> We have a connection problem: " .$connection_error . "</p>";
 }
-
-$query="SELECT * FROM comics";
-$result=mysqli_query($db_conn,$query);
-$comic2="";
-if(mysqli_num_rows($result)>0){
-    while($row=mysqli_fetch_assoc($result)){
-        if($row['id']==1){
-            $comic1 = $row['cost'];
-        }
-        if($row['id']==2){
-            $comic2 = $row['cost'];
-        }
-        if($row['id']==3){
-            $comic3 = $row['cost'];
-        }
-        if($row['id']==4){
-            $comic4 = $row['cost'];
-        }
+$query="SELECT * FROM `comics`";
+$results = mysqli_query($conn, $query);
+while ($row = mysqli_fetch_array($results)) {
+    if ($row[id]=="1"){
+        $cost=$row['cost'];
     }
-}else{
-    echo "No results were found";
 }
-mysqli_close($db_conn);
+$results = mysqli_query($conn, $query);
 ?>
 
 <html>
@@ -39,8 +29,8 @@ mysqli_close($db_conn);
     <title>Marvel</title>
     <meta http-equiv="Content-Type">
     <link rel="stylesheet" href="comics.css">
-    <script src="common.js" defer></script>
     <link rel="stylesheet" href="common.css">
+    <script src="common.js" defer></script>
 </head>
 <body>
 <div class = "header_section">
@@ -59,40 +49,32 @@ mysqli_close($db_conn);
     ?>
 </div>
 <div class = "flex_parent">
-    <div class = "side_column">
+    <div class = "side_column buypart">
         <div class = "ind_items">
             <div class = "item1">
                 <img src="https://imgix.ranker.com/user_node_img/50028/1000557665/original/amazing-fantasy-15-comic-book-series-photo-u1?w=650&q=50&fm=jpg&fit=crop&crop=faces">
             </div>
         </div>
         <div id = "descript">
-            <?php echo $comic1?>$
+            <?php echo $cost?>$
         </div>
 
-        <button id = "button">Buy</button>
+        <form action="buy.php" method="post">
+            <input type="hidden" id="cost" name="cost" value="">
+            <input type="submit" id="button" value="Buy">
+        </form>
     </div>
     <div class = "side_column">
         <div class="grid_parent">
-            <div class = "ind_items">
-                <div class = "item2">
-                    <img src="https://imgix.ranker.com/user_node_img/50028/1000557665/original/amazing-fantasy-15-comic-book-series-photo-u1?w=650&q=50&fm=jpg&fit=crop&crop=faces">
-                </div>
-            </div>
-            <div class = "ind_items">
-                <div class = "item2">
-                    <img src="https://i.stack.imgur.com/qVML6l.jpg">
-                </div>
-            </div>
-            <div class = "ind_items">
-                <div class = "item2">
-                    <img src="https://imgix.ranker.com/user_node_img/104/2075534/original/spider-man-photo-u76?w=650&q=50&fm=jpg&fit=crop&crop=faces">
-                </div>
-            </div>
-            <div class = "ind_items">
-                <div class = "item2">
-                    <img src="https://static.comicvine.com/uploads/original/5/55074/1161661-x_men136.jpg">
-                </div>
-            </div>
+            <?php
+            while ($row = mysqli_fetch_array($results)) {
+                echo "<div class = \"ind_items\"><div class = \"item2\">";
+                echo "<img src='".$row['url']."' onclick='price(".$row['cost'].")'>";
+                echo "</div></div>";
+            }
+
+            mysqli_close($db_conn);
+            ?>
         </div>
     </div>
 </div>
@@ -103,29 +85,20 @@ mysqli_close($db_conn);
 </footer>
 </body>
 
-<script>
+<script defer>
+    function price(p){
+        document.getElementById("descript").innerHTML = p+"$";
+        document.getElementById("cost").value = p;
+    }
     function fun(event){
         document.getElementsByTagName("img")[0].src=event.currentTarget.src;
     }
     const im = document.querySelectorAll("img");
     var btn = document.getElementById("Button");
 
-    for(var i = 0; i<5;i++){
+    for(var i = 0; i<im.length;i++){
         im[i].addEventListener("click",fun);
     }
-    im[1].addEventListener("click",function(){
-        document.getElementById("descript").innerHTML = <?php echo $comic1 ?>+"$"
-    });
-    im[2].addEventListener("click",function(){
-        document.getElementById("descript").innerHTML = <?php echo $comic2 ?>+"$"
-    });
-    im[3].addEventListener("click",function(){
-        document.getElementById("descript").innerHTML = <?php echo $comic3 ?>+"$"
-    });
-    im[4].addEventListener("click",function(){
-        document.getElementById("descript").innerHTML = <?php echo $comic4 ?>+"$"
-    });
+
 </script>
 </html>
-
-
