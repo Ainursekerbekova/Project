@@ -2,8 +2,8 @@
 class DBController {
 	private $host = "localhost";
 	private $user = "root";
-	private $password = "";
-	private $database = "blog_samples";
+	private $password = "root";
+	private $database = "project";
 	private $conn;
 	
 	function __construct() {

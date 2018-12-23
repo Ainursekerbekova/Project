@@ -31,7 +31,7 @@ switch($_GET["action"]) {
 		if(!empty($_SESSION["cart_item"])) {
 			foreach($_SESSION["cart_item"] as $k => $v) {
 					if($_GET["code"] == $k)
-						unset($_SESSION["cart_item"][$k]);				
+						unset(  $_SESSION["cart_item"][$k]);
 					if(empty($_SESSION["cart_item"]))
 						unset($_SESSION["cart_item"]);
 			}
@@ -43,24 +43,19 @@ switch($_GET["action"]) {
 }
 }
 ?>
-<HTML>
-<HEAD>
-<TITLE>Marvel Shopping Cart</TITLE>
-<link href="../games/games2.css" type="text/css" rel="stylesheet" />
-</HEAD>
-<BODY>
+<html>
+<head>
+<title>Marvel Shop Game</title>
+<link href="styleGame.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
 <div id="shopping-cart">
-<div class="txt-heading">Marvel Shop</div>
-
+<div class="txt-heading"><h2>Marvel Shop</h2></div>
 <a id="btnEmpty" href="indexGame.php?action=empty">Clear</a>
 <?php
 if(isset($_SESSION["cart_item"])){
     $total_quantity = 0;
     $total_price = 0;
-	$Total_price=0;
-	$TP=0;
-	$Sale=0;
-	$Shipping=0;
 ?>	
 <table class="tbl-cart" cellpadding="10" cellspacing="1">
 <tbody>
@@ -72,22 +67,9 @@ if(isset($_SESSION["cart_item"])){
 <th style="text-align:right;" width="10%">Price</th>
 <th style="text-align:center;" width="5%">Remove</th>
 </tr>	
-<?php	
-
-   foreach ($_SESSION["cart_item"] as $item){
-	   $Shipping=$total_quantity*5;
-	   $total_quantity += $item["quantity"];
-	   if($total_quantity==3){
-			echo "<div class='text'>Congratulations, you have a 10% discount</div>";
-			$item_price = $item["price"]*$item["quantity"];
-			$TP += $item_price;
-			$Sale=$TP*10/100;
-			$TP=$TP-$Sale;
-		}
-		else{	
-		$item_price = ($item["price"])*$item["quantity"];
-		$TP+=$item_price;
-		}
+<?php		
+    foreach ($_SESSION["cart_item"] as $item){
+        $item_price = $item["quantity"]*$item["price"];
 		?>
 				<tr>
 				<td><img src="<?php echo $item["image"]; ?>" class="cart-item-image" /><?php echo $item["name"]; ?></td>
@@ -95,11 +77,11 @@ if(isset($_SESSION["cart_item"])){
 				<td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
 				<td  style="text-align:right;"><?php echo "$ ".$item["price"]; ?></td>
 				<td  style="text-align:right;"><?php echo "$ ". number_format($item_price,2); ?></td>
-				<td style="text-align:center;"><a href="indexGame.php?action=remove&code=<?php echo $item[" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
+				<td style="text-align:center;"><a href="indexGame.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
 				</tr>
 				<?php
-				$Shipping=$total_quantity*5;
-				$total_price =$TP+$Shipping;
+				$total_quantity += $item["quantity"];
+				$total_price += ($item["price"]*$item["quantity"]);
 		}
 		?>
 
@@ -121,17 +103,27 @@ if(isset($_SESSION["cart_item"])){
 </div>
 
 <div id="product-grid">
+	<div class="txt-heading"><h2>Products</h2></div>
 	<?php
 	$product_array = $db_handle->runQuery("SELECT * FROM tblproduct ORDER BY id ASC");
 	if (!empty($product_array)) { 
 		foreach($product_array as $key=>$value){
 	?>
-	
+		<div class="product-item">
+			<form method="post" action="indexGame.php?action=add&code=<?php echo $product_array[$key]?>">
+			<div class="product-tile-footer">
+			<div class="product-title"><?php echo $product_array[$key]["name"]; ?></div>
+			<div class="product-price"><?php echo "$".$product_array[$key]["price"]; ?></div>
+			<div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Buy" class="btnAddAction" /></div>
+			</div>
+			</form>
+		</div>
 	<?php
 		}
 	}
 	?>
 </div>
-<button id ="back" onclick= "window.location.href='indexGame.php'">Back to Shop</button>
-</BODY>
-</HTML>
+<button id ="next" onclick= "window.location.href='proceedtocheckout.php'">Go!</button>
+<button id ="back" onclick= "window.location.href='index.php'">Back to Home Page</button>
+</body>
+</html>

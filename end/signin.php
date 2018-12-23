@@ -22,7 +22,7 @@ if (isset($Name)) {
                 setcookie("admin", "", time() - 100);
                 setcookie("user", $Name);
             }
-            header("Location: index.php");
+            header("Location: indexGame.php");
             die();
         }
     }

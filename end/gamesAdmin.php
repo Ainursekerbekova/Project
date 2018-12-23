@@ -1,25 +1,25 @@
 <html>
 <head>
-    <title>Marvel</title>
+    <title>Games/Admin Page</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../games/games.css">
 </head>
 <body>
 		<div class = "header">
 			<div class = "header_section">
-				<div class = "headerlogo"><a href="index.html">Marvel Universe</a></div>
-				<div class = "headerButton"><a href = "characters.php">
+				<div class = "headerlogo"><a href="indexAdmin.html">Marvel Universe</a></div>
+				<div class = "headerButton"><a href = "charactersAdmin.php">
 				Characters</a></div>
-				<div class = "headerButton"><a href = "comics.php">
+				<div class = "headerButton"><a href = "comicsAdmin.php">
 				Comics</a></div>
-				<div class = "headerButton"><a href = "games.php">
+				<div class = "headerButton"><a href = "gamesAdmin.php">
 				Games</a></div>
-			    <div class = "headerButton"><a href = "movies.php">
+			    <div class = "headerButton"><a href = "moviesAdmin.php">
 				Movies</a></div>
 			</div>
 			<div class = "header_section">
-			<div class = "SignInButton"><a href = "signin.html">
-				Sign in</a></div>
+			<div class = "SignInButton"><a href = "index.html">
+				Exit</a></div>
 			</div>
 			</div>
 <div id="container">
