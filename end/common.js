@@ -5,7 +5,7 @@ function out() {
     document.cookie="user=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 }
 function add(l) {
-    if (!document.querySelector("form")) {
+    if (!document.querySelector("input[type=text]")) {
         let form = document.createElement("form");
         form.method = 'post';
         let divka = document.getElementById("addmovie");

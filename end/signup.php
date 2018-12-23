@@ -71,11 +71,11 @@ mysqli_close($conn);
   <div class="container">
     <h1>Sign up</h1>
     <hr>
-    <label for="username"><b>Username:</b></label>
+    <label ><b>Username:</b></label>
     <input type="text" name="Name" placeholder="Enter Username" required>
-    <label for="psw"><b>Password:</b></label>
+    <label ><b>Password:</b></label>
     <input type="password" name="Password" placeholder="Enter Password" required>
-	<label for="ConfPassw"><b>Confirm Password:</b></label>
+	<label ><b>Confirm Password:</b></label>
     <input type="password" name="ConfPassw" placeholder="Password one more time" required>
     <hr>
     <button type="submit" id="signin">Enter</button>
