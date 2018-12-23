@@ -23,7 +23,7 @@ if (isset($Name)){
         $results = mysqli_query($conn, $query);
         setcookie("admin", "", time() - 100);
         setcookie("user", $Name);
-        header("Location: index.php");
+        header("Location: indexGame.php");
         die();
     }
 }

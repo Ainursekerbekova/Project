@@ -16,7 +16,7 @@
     <div class = "headerButton"><a href = "movies.php">Movies</a></div>
     <?php
     if(isset($_COOKIE['user']) || isset($_COOKIE['admin'])){
-        echo "<div class = \"headerButton\" onclick='out()'><a href='index.php'>Sign out</a></div>";
+        echo "<div class = \"headerButton\" onclick='out()'><a href='indexGame.php'>Sign out</a></div>";
     }
     else{
         echo "<div class = \"headerButton\"><a href = 'signin.php'>Sign in</a></div>";
